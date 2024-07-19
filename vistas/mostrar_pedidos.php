@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 // Consulta SQL para obtener los datos de productos
-$sql = "SELECT producto_id, titulo, categoria_id, precio, estado, cantidad_disponible FROM productos";
+$sql = "SELECT producto_id, cantidad, email_comprador FROM productos_comprados";
 $result = $conn->query($sql);
 
 $data = []; // Inicializar el array para almacenar los datos
@@ -42,9 +42,9 @@ $conn->close();
     <title>Prueba Técnica</title>
     <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
     <!-- Estilos CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins.min.css" />
-    <link rel="stylesheet" href="assets/css/kaiadmin.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="../assets/css/kaiadmin.min.css" />
 </head>
 <body>
     <div class="wrapper">
@@ -79,8 +79,8 @@ $conn->close();
                             <div class="collapse" id="dashboard">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="vistas/mostrar_pedidos.php">
-                                            <span class="sub-item">Listado de productos comprados</span>
+                                        <a href="mostrar_publicados.php">
+                                            <span class="sub-item">Listado de productos publicados</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -130,10 +130,10 @@ $conn->close();
                                 <div class="card-head-row card-tools-still-right">
                                     <div class="card-title">Listado de productos publicados</div>
                                     <div class="card-tools">
-                                         <a href="admin/publicar_producto.php"> 
+                                        <a href="../admin/realizar_compra.php"> 
                                         <button class="btn btn-secondary">
                                             <span class="btn-label"> </span>
-                                            Publicar
+                                            Comprar
                                         </button> </a>
                                     </div>
                                 </div>
@@ -144,23 +144,18 @@ $conn->close();
                                     <table class="table align-items-center mb-0">
                                         <thead class="thead-light">
                                             <tr>
-                                                <th scope="col">Id de Producto</th>
-                                                <th scope="col" class="text-center">Título</th>
-                                                <th scope="col" class="text-center">Categoría</th>
-                                                <th scope="col" class="text-center">Precio</th>
-                                                <th scope="col" class="text-center">Estado</th>
-                                                <th scope="col" class="text-center">Cantidad Disponible</th>
+                                                <th scope="col" class="text-center">Id de Producto</th>
+                                                <th scope="col" class="text-center">Cantidad Comprada</th>
+                                                <th scope="col" class="text-center">Email Comprador</th>
+                                                
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php foreach ($data as $row): ?>
                                                 <tr>
                                                     <td class="text-center"><?php echo $row['producto_id']; ?></td>
-                                                    <td class="text-center"><?php echo $row['titulo']; ?></td>
-                                                    <td class="text-center"><?php echo $row['categoria_id']; ?></td>
-                                                    <td class="text-center"><?php echo $row['precio']; ?></td>
-                                                    <td class="text-center"><span class="badge badge-success"><?php echo $row['estado']; ?></span></td>
-                                                    <td class="text-center"><?php echo $row['cantidad_disponible']; ?></td>
+                                                    <td class="text-center"><?php echo $row['cantidad']; ?></td>
+                                                    <td class="text-center"><?php echo $row['email_comprador']; ?></td>
                                                 </tr>
                                             <?php endforeach; ?>
                                         </tbody>
@@ -174,16 +169,16 @@ $conn->close();
         </div>
     </div>
     <!--   Core JS Files   -->
-    <script src="assets/js/core/jquery-3.7.1.min.js"></script>
-    <script src="assets/js/core/popper.min.js"></script>
-    <script src="assets/js/core/bootstrap.min.js"></script>
+    <script src="../assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/core/bootstrap.min.js"></script>
 
     <!-- jQuery Scrollbar -->
-    <script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 
     <!-- Datatables -->
-    <script src="assets/js/plugin/datatables/datatables.min.js"></script>
+    <script src="../assets/js/plugin/datatables/datatables.min.js"></script>
     <!-- Kaiadmin JS -->
-    <script src="assets/js/kaiadmin.min.js"></script>
+    <script src="../assets/js/kaiadmin.min.js"></script>
 </body>
 </html>

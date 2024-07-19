@@ -42,9 +42,9 @@ $conn->close();
     <title>Prueba Técnica</title>
     <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
     <!-- Estilos CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins.min.css" />
-    <link rel="stylesheet" href="assets/css/kaiadmin.min.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="../assets/css/kaiadmin.min.css" />
 </head>
 <body>
     <div class="wrapper">
@@ -79,7 +79,7 @@ $conn->close();
                             <div class="collapse" id="dashboard">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="vistas/mostrar_pedidos.php">
+                                        <a href="mostrar_pedidos.php">
                                             <span class="sub-item">Listado de productos comprados</span>
                                         </a>
                                     </li>
@@ -130,7 +130,7 @@ $conn->close();
                                 <div class="card-head-row card-tools-still-right">
                                     <div class="card-title">Listado de productos publicados</div>
                                     <div class="card-tools">
-                                         <a href="admin/publicar_producto.php"> 
+                                        <a href="../admin/publicar_producto.php"> 
                                         <button class="btn btn-secondary">
                                             <span class="btn-label"> </span>
                                             Publicar
@@ -174,16 +174,16 @@ $conn->close();
         </div>
     </div>
     <!--   Core JS Files   -->
-    <script src="assets/js/core/jquery-3.7.1.min.js"></script>
-    <script src="assets/js/core/popper.min.js"></script>
-    <script src="assets/js/core/bootstrap.min.js"></script>
+    <script src="../assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/core/bootstrap.min.js"></script>
 
     <!-- jQuery Scrollbar -->
-    <script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 
     <!-- Datatables -->
-    <script src="assets/js/plugin/datatables/datatables.min.js"></script>
+    <script src="../assets/js/plugin/datatables/datatables.min.js"></script>
     <!-- Kaiadmin JS -->
-    <script src="assets/js/kaiadmin.min.js"></script>
+    <script src="../assets/js/kaiadmin.min.js"></script>
 </body>
 </html>
